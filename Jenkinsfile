@@ -4,14 +4,14 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'javac -d .src/*.java'
-        sh 'echo Main-Class: Rectangulator > MANIFEST.MF'
-        sh 'jar -cvmf MANIFEST.MF rectangle.jar *.class'
+        bat 'javac -d .src/*.java'
+        bat 'echo Main-Class: Rectangulator > MANIFEST.MF'
+        bat 'jar -cvmf MANIFEST.MF rectangle.jar *.class'
       }
     }
     stage('run') {
       steps {
-        sh 'java -jar rectangle.jar 7 9'
+        bat 'java -jar rectangle.jar 7 9'
       }
     }
   }
