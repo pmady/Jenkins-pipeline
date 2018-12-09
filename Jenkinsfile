@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        bat 'javac -d .src/*.java'
+        bat 'javac -d . src/*.java'
         bat 'echo Main-Class: Rectangulator > MANIFEST.MF'
         bat 'jar -cvmf MANIFEST.MF rectangle.jar *.class'
       }
